@@ -5,15 +5,13 @@ class ListTileWidget extends StatelessWidget {
   final IconData leading;
   final String tittle;
   final IconData? trailing;
-  final Function? onTap;
   const ListTileWidget({
-    super.key, required this.leading, required this.tittle, this.trailing, this.onTap,
+    super.key, required this.leading, required this.tittle, this.trailing,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: (){onTap;},
       leading: Icon(leading,color: Colors.white70,size: 25,),
       title: Text(
         tittle,

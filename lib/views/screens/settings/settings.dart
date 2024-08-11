@@ -86,13 +86,17 @@ class _SettingsPageState extends State<SettingsPage> {
             const SizedBox(
               height: 5,
             ),
-            ListTileWidget(
+            InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const StatisticsPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StatisticsPage()));
               },
-              leading: Icons.auto_graph,
-              tittle: 'Statistics',
+              child: const ListTileWidget(
+                leading: Icons.auto_graph,
+                tittle: 'Statistics',
+              ),
             ),
             const SizedBox(
               height: 5,
@@ -146,7 +150,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     lights = value;
                   });
                 }),
-            const ListTileWidget(leading: Icons.ac_unit_outlined, tittle: 'English'),
+            const ListTileWidget(
+                leading: Icons.ac_unit_outlined, tittle: 'English'),
             const SizedBox(
               height: 5,
             ),
@@ -166,7 +171,8 @@ class _SettingsPageState extends State<SettingsPage> {
               ],
             ),
             const ListTileWidget(leading: Icons.share, tittle: 'Share app'),
-            const ListTileWidget(leading: Icons.star_border, tittle: 'Rate app'),
+            const ListTileWidget(
+                leading: Icons.star_border, tittle: 'Rate app'),
             const ListTileWidget(
                 leading: Icons.file_upload_outlined, tittle: 'Upload'),
             const ListTileWidget(
