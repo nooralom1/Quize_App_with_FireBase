@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quize_app/views/screens/settings/widgets/listtile.dart';
 import 'package:quize_app/views/screens/statistics/statistics.dart';
+import 'package:quize_app/views/screens/settings/widgets/listtile.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -87,11 +87,8 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 5,
             ),
             InkWell(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const StatisticsPage()));
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>StatisticsPage()));
               },
               child: const ListTileWidget(
                 leading: Icons.auto_graph,
