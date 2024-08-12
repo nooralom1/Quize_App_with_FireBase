@@ -35,6 +35,7 @@ class _LevelsPageState extends State<LevelsPage> {
                     ),
                   ),
                   const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         "Levels",
