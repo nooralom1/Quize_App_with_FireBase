@@ -18,9 +18,6 @@ class _StatisticsPageState extends State<StatisticsPage> {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
             Row(
               children: [
                 const SizedBox(
@@ -66,9 +63,9 @@ class _StatisticsPageState extends State<StatisticsPage> {
             ),
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LogosPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LogosPage()));
               },
-              child: CustomListTile(
+              child: const CustomListTile(
                 leading: Icons.star_border,
                 tittle: 'Logos',
                 trailing: '0',
@@ -94,20 +91,20 @@ class _StatisticsPageState extends State<StatisticsPage> {
             ),
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LevelsPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LevelsPage()));
               },
-              child: CustomListTile(
+              child: const CustomListTile(
                 leading: Icons.lock_outline_sharp,
                 tittle: 'Levels',
                 trailing: '26',
               ),
             ),
-            CustomListTile(
+            const CustomListTile(
               leading: Icons.play_arrow,
               tittle: 'Unlocked levels',
               trailing: '0',
             ),
-            CustomListTile(
+            const CustomListTile(
               leading: Icons.check_circle_outline,
               tittle: 'Full complete',
               trailing: '0',
@@ -127,12 +124,12 @@ class _StatisticsPageState extends State<StatisticsPage> {
                 ),
               ],
             ),
-            CustomListTile(
+            const CustomListTile(
               leading: Icons.light_mode_rounded,
               tittle: 'Unused hints',
               trailing: '37',
             ),
-            CustomListTile(
+            const CustomListTile(
               leading: Icons.light_mode_outlined,
               tittle: 'Used hints',
               trailing: '13',
@@ -152,12 +149,12 @@ class _StatisticsPageState extends State<StatisticsPage> {
                 ),
               ],
             ),
-            CustomListTile(
+            const CustomListTile(
               leading: Icons.calendar_month_sharp,
               tittle: 'First run',
               trailing: '07-08-2024',
             ),
-            CustomListTile(
+            const CustomListTile(
               leading: Icons.access_time_rounded,
               tittle: 'App since',
               trailing: '4 Days',

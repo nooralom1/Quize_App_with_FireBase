@@ -12,7 +12,7 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      tileColor: Color(0xff5d85d5),
+      tileColor: const Color(0xff5d85d5),
       leading: Icon(
         leading,
         size: 25,
@@ -20,11 +20,11 @@ class CustomListTile extends StatelessWidget {
       ),
       title: Text(
         tittle,
-        style: TextStyle(color: Colors.white70, fontSize: 20),
+        style: const TextStyle(color: Colors.white70, fontSize: 20),
       ),
       trailing: Text(
         trailing,
-        style: TextStyle(color: Colors.white70, fontSize: 20),
+        style: const TextStyle(color: Colors.white70, fontSize: 20),
       ),
     );
   }
