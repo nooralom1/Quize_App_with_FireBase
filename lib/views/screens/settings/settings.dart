@@ -18,9 +18,6 @@ class _SettingsPageState extends State<SettingsPage> {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
             Row(
               children: [
                 const SizedBox(
@@ -88,7 +85,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             InkWell(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>StatisticsPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const StatisticsPage()));
               },
               child: const ListTileWidget(
                 leading: Icons.auto_graph,
