@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:quize_app/models/all_models.dart';
@@ -118,11 +117,11 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                             return  SizedBox(
                               width: 47.2,
                               child:  Card(
-                                color: Color(0xff6f94dc),
+                                color: const Color(0xff6f94dc),
                                 child: Center(
-                                  child:Text(
-                                    "${getData[index]}",
-                                    style: TextStyle(
+                                  child: Text(
+                                    getData[index],
+                                    style: const TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 27)
@@ -135,7 +134,7 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                       ),
                     ),
                   ),
-                   Padding(
+                   const Padding(
                     padding: EdgeInsets.only(top: 400, left: 170),
                     child: SizedBox(
                       height: 65,
@@ -243,15 +242,14 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                           onTap: (){
                            String  data = letter [index].letter;
                            getData.add(data);
-                           setState(() {
-                           });
+                           setState(() {});
                           },
                           child: Card(
                             color: Colors.white,
                             child: Center(
                               child: Text(
                                   letter[index].letter,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.deepPurple,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 35),

@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:quize_app/views/screens/guess_thr_logo/guess_the_logo.dart';
-import 'package:quize_app/views/screens/mypage/mypage.dart';
 
 void main(){
   runApp( const MyApp());
