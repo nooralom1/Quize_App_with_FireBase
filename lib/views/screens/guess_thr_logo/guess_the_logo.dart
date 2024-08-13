@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:quize_app/models/all_models.dart';
 
@@ -10,8 +9,36 @@ class GuessTheLogoPage extends StatefulWidget {
 }
 
 class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
+  List<String> getData = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
 
-  List<String> getData = [];
+  List<bool> isCheck = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +131,9 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 350,),
+                    padding: const EdgeInsets.only(
+                      top: 350,
+                    ),
                     child: SizedBox(
                       height: 50,
                       child: Padding(
@@ -114,18 +143,16 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return  SizedBox(
+                            return SizedBox(
                               width: 47.2,
-                              child:  Card(
+                              child: Card(
                                 color: const Color(0xff6f94dc),
                                 child: Center(
-                                  child: Text(
-                                    getData[index],
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 27)
-                                  ),
+                                  child: Text(getData[index],
+                                      style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 27)),
                                 ),
                               ),
                             );
@@ -134,7 +161,7 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                       ),
                     ),
                   ),
-                   const Padding(
+                  const Padding(
                     padding: EdgeInsets.only(top: 400, left: 170),
                     child: SizedBox(
                       height: 65,
@@ -170,58 +197,61 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                     child: SizedBox(
                       height: 100,
                       width: 320,
-                      child: Card(
-                        color: Colors.white,
-                        child: Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 65,
-                                width: 65,
-                                child: Card(
-                                  color: Color(0xff2851a4),
-                                  child: Center(
-                                      child: Icon(
-                                    Icons.share,
-                                    color: Colors.white,
-                                    size: 35,
-                                  )),
+                      child: Visibility(
+                        visible: true,
+                        child: Card(
+                          color: Colors.white,
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 65,
+                                  width: 65,
+                                  child: Card(
+                                    color: Color(0xff2851a4),
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.share,
+                                      color: Colors.white,
+                                      size: 35,
+                                    )),
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              SizedBox(
-                                height: 65,
-                                width: 65,
-                                child: Card(
-                                  color: Color(0xff2851a4),
-                                  child: Center(
-                                      child: Icon(
-                                    Icons.edit,
-                                    color: Colors.white,
-                                    size: 35,
-                                  )),
+                                SizedBox(
+                                  width: 5,
                                 ),
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              SizedBox(
-                                height: 65,
-                                width: 65,
-                                child: Card(
-                                  color: Color(0xff2851a4),
-                                  child: Center(
-                                      child: Icon(
-                                    Icons.star_border,
-                                    color: Colors.white,
-                                    size: 35,
-                                  )),
+                                SizedBox(
+                                  height: 65,
+                                  width: 65,
+                                  child: Card(
+                                    color: Color(0xff2851a4),
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.edit,
+                                      color: Colors.white,
+                                      size: 35,
+                                    )),
+                                  ),
                                 ),
-                              ),
-                            ],
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                SizedBox(
+                                  height: 65,
+                                  width: 65,
+                                  child: Card(
+                                    color: Color(0xff2851a4),
+                                    child: Center(
+                                        child: Icon(
+                                      Icons.star_border,
+                                      color: Colors.white,
+                                      size: 35,
+                                    )),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -232,27 +262,37 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                     child: GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 8,
-                          childAspectRatio: 0.9,
-                          ),
+                        crossAxisCount: 8,
+                        childAspectRatio: 0.9,
+                      ),
                       itemCount: letter.length,
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return InkWell(
-                          onTap: (){
-                           String  data = letter [index].letter;
-                           getData.add(data);
-                           setState(() {});
+                          onTap: () {
+                            String data = letter[index].letter;
+                            setState(() {
+                              isCheck[index]=false;
+                              for (int i = 0; i < getData.length; i++) {
+                                if (getData[i].isEmpty) {
+                                  getData[i] = data;
+                                  return;
+                                }
+                              }
+                            });
                           },
-                          child: Card(
-                            color: Colors.white,
-                            child: Center(
-                              child: Text(
+                          child: Visibility(
+                            visible: isCheck[index],
+                            child: Card(
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
                                   letter[index].letter,
-                                style: const TextStyle(
-                                    color: Colors.deepPurple,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 35),
+                                  style: const TextStyle(
+                                      color: Colors.deepPurple,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 35),
+                                ),
                               ),
                             ),
                           ),
