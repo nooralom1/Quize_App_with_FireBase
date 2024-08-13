@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:quize_app/models/all_models.dart';
 
 class GuessTheLogoPage extends StatefulWidget {
   const GuessTheLogoPage({super.key});
@@ -8,6 +11,9 @@ class GuessTheLogoPage extends StatefulWidget {
 }
 
 class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
+
+  List<String> getData = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +48,8 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                           children: [
                             Text(
                               "Guess the logo",
-                              style: TextStyle(color: Colors.white, fontSize: 25),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 25),
                             ),
                             SizedBox(
                               height: 5,
@@ -98,24 +105,28 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 350, left: 15),
+                    padding: const EdgeInsets.only(top: 350,),
                     child: SizedBox(
-                      height: 45,
+                      height: 50,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: ListView.builder(
                           itemCount: 8,
                           scrollDirection: Axis.horizontal,
                           shrinkWrap: true,
                           itemBuilder: (context, index) {
-                            return const SizedBox(
-                              width: 42,
-                              child: Card(
+                            return  SizedBox(
+                              width: 47.2,
+                              child:  Card(
                                 color: Color(0xff6f94dc),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder(
-                                          borderSide: BorderSide.none)),
+                                child: Center(
+                                  child:Text(
+                                    "${getData[index]}",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 27)
+                                  ),
                                 ),
                               ),
                             );
@@ -124,7 +135,7 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                       ),
                     ),
                   ),
-                  const Padding(
+                   Padding(
                     padding: EdgeInsets.only(top: 400, left: 170),
                     child: SizedBox(
                       height: 65,
@@ -219,58 +230,36 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 660),
-                    child: SizedBox(
-                      height: 60,
-                      child: ListView.builder(
-                        itemCount: 8,
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return const SizedBox(
-                            width: 49.6,
-                            child: Card(
-                              color: Colors.white,
-                              child: Center(
-                                child: Text(
-                                  "A",
-                                  style: TextStyle(
-                                      color: Colors.deepPurple,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 35),
-                                ),
+                    child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 8,
+                          childAspectRatio: 0.9,
+                          ),
+                      itemCount: letter.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: (){
+                           String  data = letter [index].letter;
+                           getData.add(data);
+                           setState(() {
+                           });
+                          },
+                          child: Card(
+                            color: Colors.white,
+                            child: Center(
+                              child: Text(
+                                  letter[index].letter,
+                                style: TextStyle(
+                                    color: Colors.deepPurple,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 35),
                               ),
                             ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 720),
-                    child: SizedBox(
-                      height: 60,
-                      child: ListView.builder(
-                        itemCount: 8,
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return const SizedBox(
-                            width: 49.6,
-                            child: Card(
-                              color: Colors.white,
-                              child: Center(
-                                child: Text(
-                                  "A",
-                                  style: TextStyle(
-                                      color: Colors.deepPurple,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 35),
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
