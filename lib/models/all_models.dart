@@ -1,9 +1,8 @@
-
-class Letters{
-
+class Letters {
   final String letter;
   Letters({required this.letter});
 }
+
 List<Letters> letter = [
   Letters(letter: "K"),
   Letters(letter: "C"),
