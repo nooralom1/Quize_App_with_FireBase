@@ -62,8 +62,9 @@ class _StatisticsPageState extends State<StatisticsPage> {
               ],
             ),
             InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LogosPage()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const LogosPage()));
               },
               child: const CustomListTile(
                 leading: Icons.star_border,
@@ -90,8 +91,11 @@ class _StatisticsPageState extends State<StatisticsPage> {
               height: 5,
             ),
             InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LevelsPage()));
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LevelsPage()));
               },
               child: const CustomListTile(
                 leading: Icons.lock_outline_sharp,
