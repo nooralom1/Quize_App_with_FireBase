@@ -31,7 +31,9 @@ class _MyPageState extends State<MyPage> {
                 height: 200,
                 width: 200,
               ),
-              const SizedBox(height: 150,),
+              const SizedBox(
+                height: 150,
+              ),
               const SizedBox(
                 height: 80,
                 width: 230,
@@ -47,7 +49,9 @@ class _MyPageState extends State<MyPage> {
                   )),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -59,10 +63,16 @@ class _MyPageState extends State<MyPage> {
                         child: Card(
                           color: Color(0xff4775d1),
                           child: Center(
-                              child: Icon(Icons.share_rounded,color: Colors.white,size: 40,)),
+                              child: Icon(
+                            Icons.share_rounded,
+                            color: Colors.white,
+                            size: 40,
+                          )),
                         ),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Text("Share"),
                     ],
                   ),
@@ -72,17 +82,27 @@ class _MyPageState extends State<MyPage> {
                         height: 80,
                         width: 80,
                         child: InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const SettingsPage()));
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SettingsPage()));
                           },
                           child: const Card(
                             color: Color(0xff4775d1),
                             child: Center(
-                                child: Icon(Icons.settings,color: Colors.white,size: 40,)),
+                                child: Icon(
+                              Icons.settings,
+                              color: Colors.white,
+                              size: 40,
+                            )),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 5,),
+                      const SizedBox(
+                        height: 5,
+                      ),
                       const Text("Settings"),
                     ],
                   )
