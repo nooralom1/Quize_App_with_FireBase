@@ -134,9 +134,9 @@ class _LevelsPageState extends State<LevelsPage> {
                                     Container(
                                       height: 12,
                                       decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(50),
-                                          color: Colors.white38),
+                                        borderRadius: BorderRadius.circular(50),
+                                        color: Colors.white38,
+                                      ),
                                     ),
                                   ],
                                 )
