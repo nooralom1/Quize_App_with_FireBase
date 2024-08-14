@@ -39,7 +39,6 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
     true,
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -272,7 +271,7 @@ class _GuessTheLogoPageState extends State<GuessTheLogoPage> {
                           onTap: () {
                             String data = letter[index].letter;
                             setState(() {
-                              isCheck[index]=false;
+                              isCheck[index] = false;
                               for (int i = 0; i < getData.length; i++) {
                                 if (getData[i].isEmpty) {
                                   getData[i] = data;
