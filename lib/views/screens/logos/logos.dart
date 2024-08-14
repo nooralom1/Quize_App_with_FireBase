@@ -11,7 +11,7 @@ class LogosPage extends StatefulWidget {
 class _LogosPageState extends State<LogosPage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xff4775d1),
       body: SafeArea(
         child: Column(
@@ -81,23 +81,30 @@ class _LogosPageState extends State<LogosPage> {
             ),
             Expanded(
               child: Padding(
-                padding:  const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 child: GridView.builder(
                   itemCount: 40,
-                  gridDelegate:  const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisSpacing: 10,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       crossAxisCount: 4),
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>const GuessTheLogoPage()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const GuessTheLogoPage()));
                       },
                       child: Container(
                         decoration: const BoxDecoration(
-                            color: Colors.white,
-                            image: DecorationImage(
-                                image: AssetImage("assets/images/logo.png"))),
+                          color: Colors.white,
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/logo.png"),
+                          ),
+                        ),
                       ),
                     );
                   },
